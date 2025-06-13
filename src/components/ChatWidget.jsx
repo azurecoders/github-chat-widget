@@ -16,7 +16,7 @@ export default function ChatWidget({ config }) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": config.apiKey, // optional, if you're handling API key via headers
+          "Authorization": config.apiKey, // optional, if you're handling API key via headers
         },
         body: JSON.stringify({ message: input }),
       });
