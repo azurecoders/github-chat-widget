@@ -7,10 +7,18 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
     lib: {
-      entry: "src/main.jsx",
+      entry: "src/main.jsx", // your entry file
       name: "ChatWidget",
-      fileName: "chat-widget",
-      formats: ["iife"], // Important: IIFE format makes it browser-embeddable
+      formats: ["iife"],
+      fileName: () => `chat-widget.iife.js`,
     },
+    rollupOptions: {
+      output: {
+        globals: {},
+      },
+    },
+  },
+  define: {
+    "process.env": {}, // prevent process errors
   },
 });
