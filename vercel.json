@@ -1,13 +1,8 @@
 {
-  "headers": [
+  "builds": [
     {
-      "source": "/chat-widget.iife.js",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript"
-        }
-      ]
+      "src": "dist/**",
+      "use": "@vercel/static"
     }
   ]
 }
